@@ -1,0 +1,7 @@
+PASS: all 9 payload files match built app byte-for-byte
+PASS: app 1.3.0 build 4, minimum macOS 14.0
+PASS: installer version, destination, postinstall and readme match
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/package-check-1.3.0/SoumaoWubi-component.pkg/Payload/Library/Input Methods/SoumaoWubi.app: valid on disk
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/package-check-1.3.0/SoumaoWubi-component.pkg/Payload/Library/Input Methods/SoumaoWubi.app: satisfies its Designated Requirement
+x86_64 arm64
+SHA256: 1bd627a7f5e158fe17da0fc75b28fc804c342506f8b74905ad31d02dc1448d67; package bytes: 2776954

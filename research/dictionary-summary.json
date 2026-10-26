@@ -1,0 +1,158 @@
+{
+  "dictionary_sha256": "84076d8204d2bfbe8024de5337b746b8d140bb280b3973dedec40bd884000f11",
+  "binary_sha256": "680320ddc970225d228639138f257e73818f095f5c91260c246e412d9d751815",
+  "raw_records": 109027,
+  "unique_words": 107809,
+  "full_code_word_pairs": 107809,
+  "exported_code_word_pairs": 112014,
+  "groups": {
+    "1": 21501,
+    "2": 64266,
+    "3": 11203,
+    "4": 10951,
+    "5": 699,
+    "6": 237,
+    "7": 155,
+    "8": 15
+  },
+  "short_table_counts": {
+    "1": 25,
+    "2": 616
+  },
+  "samples": {
+    "a": [
+      {
+        "code": "a",
+        "word": "工",
+        "rank": -1,
+        "kind": "short-table"
+      }
+    ],
+    "q": [
+      {
+        "code": "q",
+        "word": "我",
+        "rank": -1,
+        "kind": "short-table"
+      }
+    ],
+    "r": [
+      {
+        "code": "r",
+        "word": "的",
+        "rank": -1,
+        "kind": "short-table"
+      }
+    ],
+    "wg": [
+      {
+        "code": "wg",
+        "word": "全",
+        "rank": -1,
+        "kind": "short-table"
+      }
+    ],
+    "wq": [
+      {
+        "code": "wq",
+        "word": "你",
+        "rank": -1,
+        "kind": "short-table"
+      }
+    ],
+    "trn": [
+      {
+        "code": "trn",
+        "word": "我",
+        "rank": 1,
+        "kind": "short-flag"
+      }
+    ],
+    "aaaa": [
+      {
+        "code": "aaaa",
+        "word": "工",
+        "rank": 2685,
+        "kind": "full"
+      },
+      {
+        "code": "aaaa",
+        "word": "劳斯莱斯",
+        "rank": 27385,
+        "kind": "full"
+      },
+      {
+        "code": "aaaa",
+        "word": "花花草草",
+        "rank": 31928,
+        "kind": "full"
+      },
+      {
+        "code": "aaaa",
+        "word": "恭恭敬敬",
+        "rank": 65982,
+        "kind": "full"
+      },
+      {
+        "code": "aaaa",
+        "word": "工工",
+        "rank": 69199,
+        "kind": "full"
+      }
+    ],
+    "khlg": [
+      {
+        "code": "khlg",
+        "word": "中国",
+        "rank": 255,
+        "kind": "full"
+      },
+      {
+        "code": "khlg",
+        "word": "跑车",
+        "rank": 11607,
+        "kind": "full"
+      },
+      {
+        "code": "khlg",
+        "word": "跳车",
+        "rank": 24293,
+        "kind": "full"
+      },
+      {
+        "code": "khlg",
+        "word": "跨国",
+        "rank": 29209,
+        "kind": "full"
+      },
+      {
+        "code": "khlg",
+        "word": "贵国",
+        "rank": 49401,
+        "kind": "full"
+      }
+    ],
+    "kwwl": [
+      {
+        "code": "kwwl",
+        "word": "中华人民共和国",
+        "rank": 21140,
+        "kind": "full"
+      },
+      {
+        "code": "kwwl",
+        "word": "中体倍力",
+        "rank": 100802,
+        "kind": "full"
+      }
+    ],
+    "ltif": [
+      {
+        "code": "ltif",
+        "word": "输入法",
+        "rank": 19834,
+        "kind": "full"
+      }
+    ]
+  }
+}

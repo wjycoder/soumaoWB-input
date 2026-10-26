@@ -1,0 +1,11 @@
+{
+  "application": "SecureCRT 9.5.1",
+  "qt": "6.5",
+  "transport": "local Telnet, loopback port 65054; no shell",
+  "source": "physical keys typed by user into Soumao-IME-VERIFY",
+  "sequence": "Chinese mode: lwty Space; Shift; abcxyz123",
+  "expected": "输入abcxyz123",
+  "received": "输入abcxyz123",
+  "utf8_hex": "e8be93e585a561626378797a313233",
+  "passed": true
+}

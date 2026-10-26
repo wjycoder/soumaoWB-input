@@ -1,0 +1,19 @@
+Generated 107728 offline pinyin entries
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app/Contents/Info.plist: OK
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: replacing existing signature
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: valid on disk
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: satisfies its Designated Requirement
+pkgbuild: Inferring bundle components from contents of /Users/wangjingyan/workspace/qyst/tmp/tmp/build/package-root
+pkgbuild: Writing new component property list to /Users/wangjingyan/workspace/qyst/tmp/tmp/build/components.plist
+write: Permission denied
+write: Permission denied
+write: Permission denied
+write: Permission denied
+pkgbuild: Reading components from /Users/wangjingyan/workspace/qyst/tmp/tmp/build/components.plist
+pkgbuild: Adding component at Library/Input Methods/SoumaoWubi.app
+pkgbuild: Adding top-level postinstall script
+pkgbuild: Wrote package to /Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi-component.pkg
+productbuild: Wrote product to /Users/wangjingyan/workspace/qyst/tmp/tmp/搜猫五笔-1.3.0.pkg
+productbuild: Supported OS versions: [Min: 14.0, Before: None]
+1bd627a7f5e158fe17da0fc75b28fc804c342506f8b74905ad31d02dc1448d67  /Users/wangjingyan/workspace/qyst/tmp/tmp/搜猫五笔-1.3.0.pkg
+Built: /Users/wangjingyan/workspace/qyst/tmp/tmp/搜猫五笔-1.3.0.pkg

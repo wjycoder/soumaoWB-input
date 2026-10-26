@@ -1,0 +1,152 @@
+{
+  "evidence_id": "ev_6f68006b7e2549c7d4704cab1fb8a153ce1eb12340e808b3cbe11e4651e50d16",
+  "subject": {
+    "name": "SogouWBInput",
+    "digest": {
+      "sha256": "680320ddc970225d228639138f257e73818f095f5c91260c246e412d9d751815"
+    },
+    "local_path": "/Library/Input Methods/SogouWBInput.app/Contents/MacOS/SogouWBInput",
+    "format": "mach-o-universal",
+    "architecture": "arm64"
+  },
+  "provider": {
+    "id": "native-macos",
+    "name": "macOS native inspection utilities",
+    "version": null
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_plist",
+  "parameters": {
+    "path": "/Library/Input Methods/SogouWBInput.app/Contents/Info.plist"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "format": "xml",
+    "value": {
+      "DTCompiler": "com.apple.compilers.llvm.clang.1_0",
+      "CFBundleMainVersion": "1.4.0",
+      "CFBundleInfoDictionaryVersion": "6.0",
+      "DTPlatformVersion": "12.3",
+      "CFBundleIconFile": "sogou.icns",
+      "CFBundleName": "SogouWBInput",
+      "DTSDKName": "macosx12.3",
+      "NSSupportsAutomaticGraphicsSwitching": true,
+      "InputMethodConnectionName": "SogouWB_InputMethod_Connection",
+      "CFBundleFullVersion": "1.4.0.148",
+      "NSPrincipalClass": "NSApplication",
+      "LSApplicationCategoryType": "public.app-category.utilities",
+      "InputMethodServerDelegateClass": "SogouInputController",
+      "tsInputMethodIconFileKey": "sogou_menu_icon.tiff",
+      "DTSDKBuild": "21E226",
+      "CFBundleShortVersionString": "1.4.0",
+      "CFBundleSupportedPlatforms": [
+        "MacOSX"
+      ],
+      "BuildMachineOSBuild": "21G83",
+      "InputMethodServerControllerClass": "SogouInputController",
+      "CFBundlePackageType": "APPL",
+      "DTXcodeBuild": "13F100",
+      "CFBundleDevelopmentRegion": "English",
+      "DTPlatformBuild": "13F100",
+      "ComponentInputModeDict": {
+        "tsInputModeListKey": {
+          "com.sogou.inputmethod.wubi": {
+            "tsInputModeMenuIconFileKey": "sogou_menu_icon.tiff",
+            "tsInputModeIsVisibleKey": true,
+            "tsInputModePaletteIconFileKey": "sogou_menu_icon.tiff",
+            "tsInputModeKeyEquivalentKey": "",
+            "tsInputModeScriptKey": "smSimpChinese",
+            "tsInputModeDefaultStateKey": true,
+            "tsInputModeAlternateMenuIconFileKey": "sogou_menu_icon.tiff",
+            "tsInputModeKeyEquivalentModifiersKey": 4608,
+            "tsInputModePrimaryInScriptKey": true
+          }
+        },
+        "tsVisibleInputModeOrderedArrayKey": [
+          "com.sogou.inputmethod.wubi"
+        ]
+      },
+      "NSMainNibFile": "MainMenu",
+      "CFBundleIdentifier": "com.sogou.inputmethod.sogouWB",
+      "DTXcode": "1341",
+      "CFBuildDate": "",
+      "LSBackgroundOnly": true,
+      "NSAppTransportSecurity": {
+        "NSAllowsArbitraryLoads": true
+      },
+      "CFBundleExecutable": "SogouWBInput",
+      "CFBundleBuildNumber": "148",
+      "CFBundleSignature": "????",
+      "LSMinimumSystemVersion": "10.10",
+      "DTPlatformName": "macosx",
+      "tsInputMethodCharacterRepertoireKey": [
+        "Latn",
+        "Hans",
+        "Hant"
+      ],
+      "NSHumanReadableCopyright": "© 2013, Sogou.com"
+    },
+    "bundle": {
+      "identifier": "com.sogou.inputmethod.sogouWB",
+      "executable": "SogouWBInput",
+      "name": "SogouWBInput",
+      "version": null,
+      "short_version": "1.4.0"
+    },
+    "source_path": "/Library/Input Methods/SogouWBInput.app/Contents/Info.plist",
+    "provenance": [
+      {
+        "tool": "file",
+        "command": [
+          "/usr/bin/file",
+          "-b",
+          "$PLIST"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "8014815e1028410f48966f1880f99c842a5678cf2fcaa010e8d7e9e498f651d0",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 48,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "plutil",
+        "command": [
+          "/usr/bin/plutil",
+          "-convert",
+          "json",
+          "-o",
+          "-",
+          "--",
+          "$PLIST"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "5ec63ed0506b7676b30fe69d00ae48c689daf1badc1e786a18166b01b615e8ac",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 1866,
+        "stderr_bytes": 0
+      }
+    ],
+    "limitations": []
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/Library/Input Methods/SogouWBInput.app/Contents/Info.plist"
+    }
+  ],
+  "evidence_links": []
+}

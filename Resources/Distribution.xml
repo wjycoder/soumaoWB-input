@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>搜猫五笔</title>
+    <readme file="ReadMe.html" mime-type="text/html"/>
+    <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
+    <domains enable_anywhere="false" enable_currentUserHome="false" enable_localSystem="true"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="14.0"/>
+        </allowed-os-versions>
+    </volume-check>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.soumao.inputmethod.Wubi.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default" title="搜猫五笔"/>
+    <choice id="com.soumao.inputmethod.Wubi.pkg" title="搜猫五笔输入法" visible="false">
+        <pkg-ref id="com.soumao.inputmethod.Wubi.pkg"/>
+    </choice>
+    <pkg-ref id="com.soumao.inputmethod.Wubi.pkg" version="1.3.1" onConclusion="none">SoumaoWubi-component.pkg</pkg-ref>
+</installer-gui-script>

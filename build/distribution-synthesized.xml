@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <pkg-ref id="com.soumao.inputmethod.Wubi.pkg"/>
+    <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="14.0"/>
+        </allowed-os-versions>
+    </volume-check>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.soumao.inputmethod.Wubi.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.soumao.inputmethod.Wubi.pkg" visible="false">
+        <pkg-ref id="com.soumao.inputmethod.Wubi.pkg"/>
+    </choice>
+    <pkg-ref id="com.soumao.inputmethod.Wubi.pkg" version="1.0.0" onConclusion="none">SoumaoWubi-component.pkg</pkg-ref>
+</installer-gui-script>

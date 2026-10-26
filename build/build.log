@@ -1,0 +1,7 @@
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app/Contents/Info.plist: OK
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: replacing existing signature
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: valid on disk
+/Users/wangjingyan/workspace/qyst/tmp/tmp/build/SoumaoWubi.app: satisfies its Designated Requirement
+pkgbuild: Inferring bundle components from contents of /Users/wangjingyan/workspace/qyst/tmp/tmp/build/package-root
+pkgbuild: Writing new component property list to /Users/wangjingyan/workspace/qyst/tmp/tmp/build/components.plist
+Set: Entry, ":0:BundleIsRelocatable", Does Not Exist

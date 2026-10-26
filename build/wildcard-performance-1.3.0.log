@@ -1,0 +1,6 @@
+sz count=4605 cold=9.99ms cached=0.000ms
+zs count=3099 cold=6.82ms cached=0.000ms
+szz count=4605 cold=9.20ms cached=0.000ms
+z count=107800 cold=225.12ms cached=0.000ms
+zz count=107800 cold=223.06ms cached=0.000ms
+zzzz count=106205 cold=217.97ms cached=0.000ms

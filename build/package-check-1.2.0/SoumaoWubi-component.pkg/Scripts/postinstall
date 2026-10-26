@@ -1,0 +1,12 @@
+#!/bin/bash
+# Register the installed source in the logged-in user's session. Never enable or select it.
+set -u
+app='/Library/Input Methods/SoumaoWubi.app'
+console_user=$(/usr/bin/stat -f '%Su' /dev/console)
+console_uid=$(/usr/bin/stat -f '%u' /dev/console)
+if [[ "$console_uid" =~ ^[0-9]+$ ]] && (( console_uid >= 501 )) && [[ "$console_user" != 'loginwindow' && "$console_user" != 'root' ]]; then
+    if ! /bin/launchctl asuser "$console_uid" /usr/bin/sudo -u "$console_user" "$app/Contents/MacOS/SoumaoWubi" --register; then
+        /bin/echo '搜猫五笔已安装。请注销并重新登录，再从系统设置添加输入法。'
+    fi
+fi
+exit 0

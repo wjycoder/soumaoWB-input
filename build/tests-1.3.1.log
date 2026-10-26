@@ -1,0 +1,59 @@
+PASS: 51 core behavior checks; 112014 dictionary pairs
+PASS: 47 input event policy checks
+PASS: 22 IMK client boundary checks
+PASS: 28 prefix, pinyin and combined input checks
+PASS: 75 wildcard lookup and input checks
+PASS: three preferences tabs
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-general.png
+PASS: full dictionary contains 中国 and 跑车 at khlg
+PASS: search populates real candidate table
+PASS: table renders 中国
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-advanced.png
+PASS: button enabled: 删除所选词条
+PASS: native target/action delivered: 删除所选词条
+PASS: delete control removes 中国 at khlg
+PASS: same-code neighbors remain intact
+PASS: all other source codes unchanged by deletion
+PASS: deleted row stays visible for restore
+PASS: button enabled: 恢复所选词条
+PASS: native target/action delivered: 恢复所选词条
+PASS: restore control restores original candidates and order
+PASS: button enabled: 上移
+PASS: native target/action delivered: 上移
+PASS: up button changes first candidate
+PASS: selection follows moved word
+PASS: up disabled at first row
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-reordered.png
+PASS: button enabled: 下移
+PASS: native target/action delivered: 下移
+PASS: down button restores candidate order
+PASS: button enabled: 造词
+PASS: native target/action delivered: 造词
+PASS: add control switches search to new code
+PASS: add control creates first candidate
+PASS: successful add clears word field
+PASS: new word survives store restart
+PASS: restored dictionary survives store restart
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-custom-word.png
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-about.png
+PASS: 常规 content fits smallest supported window
+PASS: 高级设置 content fits smallest supported window
+PASS: 关于 content fits smallest supported window
+PASS: candidates arranged horizontally
+PASS: only five candidate buttons, no title/code/paging labels
+PASS: candidate window does not steal input focus
+PASS: candidate buttons fit one row without overlap
+PASS: exact candidate has no code suffix
+PASS: completion candidate shows full code suffix
+PASS: button enabled: 3 畭(lwty)
+PASS: native target/action delivered: 3 畭(lwty)
+PASS: candidate click delivers correct selection
+PASS: long candidates stay inside screen edges
+PASS: no-match candidate window hidden
+PASS: mode toast is visible and never steals input
+PASS: toast displays Chinese state
+PASS: new toast survives previous timer and owner cleanup
+PASS: toast automatically dismisses
+PASS: 46 real AppKit preferences and candidate checks; local user data: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/ui-test-user/5EE846A0-5A2D-4F62-ADEE-0278A2DBAFCC.json
+Rendering: native NSWindow with NSView.cacheDisplay bitmap, not a system screenshot or IMK integration test.
+PASS: IPv4/IPv6 TCP + UDP outbound and inbound bind denied by OS

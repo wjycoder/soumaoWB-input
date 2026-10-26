@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>安装搜猫五笔</title>
+<style>
+body { font: 14px -apple-system, "PingFang SC", sans-serif; line-height: 1.65; color: #20383c; margin: 24px; }
+h1 { font-size: 26px; color: #075d64; margin-bottom: 4px; }
+h2 { font-size: 17px; margin-top: 24px; }
+p { margin: 8px 0; }
+code { font: 12px Menlo, monospace; overflow-wrap: anywhere; }
+.subtitle { color: #577176; }
+li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<h1>搜猫五笔</h1>
+<p class="subtitle">1.0.0 · macOS 14 或更高版本 · Apple 芯片与 Intel Mac</p>
+<p>独立构建的五笔输入法，内置由本机搜狗五笔词库转换的数据。不是搜狗应用的改名版本，与搜狗公司无隶属关系。</p>
+<h2>完全离线</h2>
+<p>应用在本机完成编码查询、候选选择和词库管理，运行时禁止网络访问。无需登录账号，不提供云同步、联网更新或遥测。安装包已包含词库，安装和使用无需下载任何组件。</p>
+<h2>安装与添加输入法</h2>
+<ol>
+<li>本安装程序将输入法安装到 <code>/Library/Input Methods/SoumaoWubi.app</code>，需要管理员授权。</li>
+<li>安装完成后，打开“系统设置” → “键盘” → “文本输入” → “编辑”，点击“＋”，在“简体中文”中选择“搜猫五笔”并添加。</li>
+<li>如果列表中尚未出现“搜猫五笔”，请注销并重新登录，再打开上述设置。系统版本不同，设置名称可能略有差异。</li>
+<li>从菜单栏输入法菜单选择“搜猫五笔”开始使用。安装程序只注册输入源，不会自动启用输入法或切换当前输入法。</li>
+</ol>
+<h2>偏好设置与词库管理</h2>
+<p>切换到搜猫五笔后，在菜单栏输入法菜单中选择“偏好设置…”。也可在访达中打开 <code>/Library/Input Methods/SoumaoWubi.app</code> 进入偏好设置。</p>
+<p>打开“高级设置”，输入五笔编码即可查看对应重码词，选择指定词条后删除；输入编码和词语可自行造词。删除内置词条会保存为本地屏蔽记录，不会修改搜狗输入法或原始词库。可通过高级设置中的导入、导出功能备份个人调整。</p>
+<h2>个人词库</h2>
+<p>造词及删除记录按 macOS 用户分别保存在：</p>
+<p><code>~/Library/Application Support/SoumaoWubi/user-dictionary.json</code></p>
+<p>升级应用保留此目录中的个人数据。请勿在输入法运行期间手工修改该文件。</p>
+<p class="subtitle">当前版本使用本地 ad-hoc 代码签名，安装包未进行 Developer ID 签名或 Apple 公证。</p>
+</body>
+</html>

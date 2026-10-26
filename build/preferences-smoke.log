@@ -1,0 +1,50 @@
+2026-10-22 17:47:31.493 preferences-smoke[47376:808348] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+2026-10-22 17:47:31.609 preferences-smoke[47376:808348] TISFileInterrogator updateSystemInputSources false but old data invalid: currentCacheHeaderPtr nonNULL? 0, ->cacheFormatVersion 0, ->magicCookie 00000000, inputSourceTableCountSys 0
+2026-10-22 17:47:31.617 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.617 preferences-smoke[47376:808363] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-10-22 17:47:31.618 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+Keyboard Layouts: duplicate keyboard layout identifier -17410.
+Keyboard Layouts: keyboard layout identifier -17410 has been replaced with -28673.
+2026-10-22 17:47:31.628 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.629 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.637 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.640 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.641 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.645 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.646 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.647 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+Keyboard Layouts: duplicate keyboard layout identifier -30769.
+Keyboard Layouts: keyboard layout identifier -30769 has been replaced with -28674.
+Keyboard Layouts: duplicate keyboard layout identifier -14934.
+Keyboard Layouts: keyboard layout identifier -14934 has been replaced with -28675.
+2026-10-22 17:47:31.661 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+2026-10-22 17:47:31.661 preferences-smoke[47376:808348] Error received in message reply handler: Connection invalid
+PASS: three preferences tabs
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-general.png
+PASS: full dictionary contains 中国 and 跑车 at khlg
+PASS: search populates real candidate table
+PASS: table renders 中国
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-advanced.png
+PASS: button enabled: 删除所选词条
+PASS: native target/action delivered: 删除所选词条
+PASS: delete control removes 中国 at khlg
+PASS: same-code neighbors remain intact
+PASS: all other source codes unchanged by deletion
+PASS: deleted row stays visible for restore
+PASS: button enabled: 恢复所选词条
+PASS: native target/action delivered: 恢复所选词条
+PASS: restore control restores original candidates and order
+PASS: button enabled: 造词
+PASS: native target/action delivered: 造词
+PASS: add control switches search to new code
+PASS: add control creates first candidate
+PASS: successful add clears word field
+PASS: new word survives store restart
+PASS: restored dictionary survives store restart
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-custom-word.png
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-about.png
+PASS: 常规 content fits smallest supported window
+PASS: 高级设置 content fits smallest supported window
+PASS: 关于 content fits smallest supported window
+PASS: 23 real AppKit preferences checks; local user data: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/ui-test-user/CB229732-2AF7-4AAD-A0ED-9F69787D3DFF.json
+Rendering: native NSWindow with NSView.cacheDisplay bitmap, not a system screenshot or IMK integration test.

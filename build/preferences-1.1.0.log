@@ -1,0 +1,47 @@
+PASS: three preferences tabs
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-general.png
+PASS: full dictionary contains 中国 and 跑车 at khlg
+PASS: search populates real candidate table
+PASS: table renders 中国
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-advanced.png
+PASS: button enabled: 删除所选词条
+PASS: native target/action delivered: 删除所选词条
+PASS: delete control removes 中国 at khlg
+PASS: same-code neighbors remain intact
+PASS: all other source codes unchanged by deletion
+PASS: deleted row stays visible for restore
+PASS: button enabled: 恢复所选词条
+PASS: native target/action delivered: 恢复所选词条
+PASS: restore control restores original candidates and order
+PASS: button enabled: 上移
+PASS: native target/action delivered: 上移
+PASS: up button changes first candidate
+PASS: selection follows moved word
+PASS: up disabled at first row
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-reordered.png
+PASS: button enabled: 下移
+PASS: native target/action delivered: 下移
+PASS: down button restores candidate order
+PASS: button enabled: 造词
+PASS: native target/action delivered: 造词
+PASS: add control switches search to new code
+PASS: add control creates first candidate
+PASS: successful add clears word field
+PASS: new word survives store restart
+PASS: restored dictionary survives store restart
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-custom-word.png
+SCREENSHOT: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/preferences-about.png
+PASS: 常规 content fits smallest supported window
+PASS: 高级设置 content fits smallest supported window
+PASS: 关于 content fits smallest supported window
+PASS: candidates arranged horizontally
+PASS: only five candidate buttons, no title/code/paging labels
+PASS: candidate window does not steal input focus
+PASS: candidate buttons fit one row without overlap
+PASS: button enabled: 3 或
+PASS: native target/action delivered: 3 或
+PASS: candidate click delivers correct selection
+PASS: long candidates stay inside screen edges
+PASS: no-match candidate window hidden
+PASS: 40 real AppKit preferences and candidate checks; local user data: /Users/wangjingyan/workspace/qyst/tmp/tmp/build/ui-test-user/B8A2EB22-8F05-437F-AAC1-8269E29BBC4F.json
+Rendering: native NSWindow with NSView.cacheDisplay bitmap, not a system screenshot or IMK integration test.
