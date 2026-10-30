@@ -79,7 +79,9 @@ struct InputSession {
   case 116: key = .previousPage
   case 121: key = .nextPage
   default:
-   if !composition.code.isEmpty && text == ";" { key = .digit(2) }
+   if !composition.code.isEmpty && [";", "；"].contains(text) { key = .digit(2) }
+   // Keep ASCII apostrophes available as syllable separators in temporary pinyin.
+   else if !composition.code.isEmpty && (text == "‘" || (text == "'" && !usingPinyin)) { key = .digit(3) }
    else if !composition.code.isEmpty && ["[", "【", "-"].contains(text) { key = .previousPage }
    else if !composition.code.isEmpty && ["]", "】", "="].contains(text) { key = .nextPage }
    else if text.utf8.count == 1, let c = text.utf8.first, ((97...122).contains(c) || (usingPinyin && c == 39)) { key = .letter(text) }
@@ -92,7 +94,7 @@ struct InputSession {
    return result
   }
   let pending = composition.handle(.space, lookup: lookup).commit
-  let punctuation = ["/":"、", ",":"，", ".":"。", "?":"？", "!":"！", ":":"：", ";":"；", "(":"（", ")":"）", "[":"【", "]":"】", "\\":"、", "<":"《", ">":"》", "$":"￥", "^":"……", "_":"——"]
+  let punctuation = ["`":"·", "/":"、", ",":"，", ".":"。", "?":"？", "!":"！", ":":"：", ";":"；", "(":"（", ")":"）", "[":"【", "]":"】", "\\":"、", "<":"《", ">":"》", "$":"￥", "^":"……", "_":"——"]
   var output = punctuation[text]
   if decimal && (text == "." || text == "。") { output = "." }
   if text == "\"" {

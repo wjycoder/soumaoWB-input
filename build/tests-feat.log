@@ -1,0 +1,10 @@
+PASS: 51 core behavior checks; 112014 dictionary pairs
+PASS: 78 input event policy checks
+PASS: 22 IMK client boundary checks
+PASS: 30 prefix, pinyin and combined input checks
+PASS: 75 wildcard lookup and input checks
+2026-10-30 12:07:41.994 PreferencesSmoke[26475:494954] _LSModifyNotification(result->notificationID, keyCount, codesToSet, 0, NULL, NULL, NULL) returned error -50 on line 282 in NotificationTracker *createTrackerForMask(KeyMask, id, CFTypeRef)
+2026-10-30 12:07:42.218 PreferencesSmoke[26475:494966] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-10-30 12:07:42.218 PreferencesSmoke[26475:494954] Error received in message reply handler: Connection invalid
+PreferencesSmoke/PreferencesSmoke.swift:186: Fatal error: Unexpectedly found nil while unwrapping an Optional value
+scripts/test.sh: line 16: 26475 Trace/BPT trap: 5       build/PreferencesSmoke

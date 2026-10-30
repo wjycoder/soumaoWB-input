@@ -66,6 +66,11 @@ import Foundation
   let page = store.matchingCandidates(for: "lwt")
   _ = key("=")
   check(key(";").commit == page[6].word, "semicolon selects second prefix candidate on next page")
+  for selection in ["'", "‘"] {
+   for c in "lwt" { _ = key(String(c)) }
+   _ = key("=")
+   check(key(selection).commit == page[7].word, "quote selects third prefix candidate on next page")
+  }
   _ = key("7"); _ = key("8")
   check(key("。").commit == "." && key(".").commit == "。", "literal Chinese period after digits is one-shot ASCII")
   _ = key("a"); _ = key("2")

@@ -45,7 +45,7 @@ final class PreferencesController: NSWindowController, NSTableViewDataSource, NS
         let tabs = NSTabView()
         tabs.translatesAutoresizingMaskIntoConstraints = false
         tabs.setAccessibilityIdentifier("preferences.tabs")
-        for (name, view) in [("常规", generalView()), ("高级设置", advancedView()), ("关于", aboutView())] {
+        for (name, view) in [("常规", generalView()), ("关于", aboutView())] {
             if let stack = view.subviews.first as? NSStackView {
                 for row in stack.arrangedSubviews {
                     row.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
@@ -67,24 +67,12 @@ final class PreferencesController: NSWindowController, NSTableViewDataSource, NS
 
     private func generalView() -> NSView {
         let (view, stack) = page()
-        stack.addArrangedSubview(heading("让每一次输入，都留在本机"))
-        stack.addArrangedSubview(note("搜猫五笔完全离线运行。词库、造词和删除记录仅保存在本机。"))
-        addSpace(16, to: stack)
+        stack.spacing = 8
         autoCommitCheckbox.target = self
         autoCommitCheckbox.action = #selector(changeAutoCommit(_:))
         autoCommitCheckbox.setAccessibilityIdentifier("settings.autoCommit")
         stack.addArrangedSubview(autoCommitCheckbox)
-        stack.addArrangedSubview(note("标点跟随中英文模式。中文 / 输出顿号；数字后紧接的句点仅一次输出英文点。"))
-        addSpace(14, to: stack)
-        stack.addArrangedSubview(heading("输入快捷键", size: 14))
-        stack.addArrangedSubview(note("空格：首选词　　1–5：选词　　;：第二候选词\n【 / 】、− / = 或 Page Up / Page Down：翻页\n退格：修改编码　　Esc：取消　　Return：上屏原始编码\nShift：有编码时上屏原始编码并切到英文；无编码时切换中英文"))
-        stack.addArrangedSubview(note("每页横排 5 词；z 代替任意一位 a–y，通配及联想候选附带实际编码。\n含 z 的四码等待选词。Shift 切换时屏幕短暂显示“中文”或“ABC”。\n单击 Ctrl：本次临时全拼；有编码时保留编码，空闲时对下一次输入有效。"))
-        return view
-    }
-
-    private func advancedView() -> NSView {
-        let (view, stack) = page()
-        stack.spacing = 8
+        stack.addArrangedSubview(NSBox.separator())
         stack.addArrangedSubview(heading("词库管理"))
         stack.addArrangedSubview(note("按编码管理重码词，选中词条后上移或下移调整候选顺序。删除后可恢复。"))
         searchField.placeholderString = "输入五笔编码，例如：gggg"

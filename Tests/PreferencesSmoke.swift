@@ -87,10 +87,10 @@ import AppKit
         }
 
         let tabs = control("preferences.tabs", as: NSTabView.self)
-        check(tabs.numberOfTabViewItems == 3, "three preferences tabs")
+        check(tabs.tabViewItems.map { $0.label } == ["常规", "关于"], "general and about preferences tabs")
         tabs.selectTabViewItem(at: 0)
+        check(descendant("dictionary.search", in: tabs.selectedTabViewItem!.view!) != nil, "dictionary management is on general page")
         try screenshot("preferences-general.png")
-        tabs.selectTabViewItem(at: 1)
         settle()
         let search = control("dictionary.search", as: NSSearchField.self)
         let table = control("dictionary.entries", as: NSTableView.self)
@@ -103,7 +103,7 @@ import AppKit
         let chinaRow = store.rows(for: "khlg").firstIndex { $0.word == "中国" }!
         let chinaCell = table.view(atColumn: 0, row: chinaRow, makeIfNecessary: true) as? NSTableCellView
         check(chinaCell?.textField?.stringValue == "中国", "table renders 中国")
-        try screenshot("preferences-advanced.png")
+        try screenshot("preferences-dictionary.png")
 
         // Compare every other source code before/after a real delete-button action.
         let source = try String(contentsOf: baseURL, encoding: .utf8)
@@ -145,7 +145,7 @@ import AppKit
         check(restarted.candidates(for: "khlg") == original, "restored dictionary survives store restart")
         try screenshot("preferences-custom-word.png")
 
-        tabs.selectTabViewItem(at: 2)
+        tabs.selectTabViewItem(at: 1)
         try screenshot("preferences-about.png")
         for item in tabs.tabViewItems {
             tabs.selectTabViewItem(item)

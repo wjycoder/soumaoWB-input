@@ -17,11 +17,46 @@ import Foundation
    return input.shiftChanged(isDown: false, otherModifiers: false)
   }
   check(input.modeTitle == "中文", "initial Chinese status")
+  check(key("`").commit == "·", "Chinese backtick outputs middle dot")
+  _ = key("a")
+  check(key("`").commit == "工·", "backtick commits candidate before middle dot")
+  for selection in [";", "；", "'", "‘"] {
+   _ = key("a")
+   let result = key(selection)
+   check(result.consumed && result.commit == ([";", "；"].contains(selection) ? "戈" : "或"), "candidate shortcut \(selection)")
+   check(input.composition.code.isEmpty, "selection clears composition")
+   _ = key("a"); _ = key("=")
+   let missing = key(selection)
+   check(missing.consumed && missing.commit == nil && input.composition.code == "a" && input.composition.page == 1, "missing candidate preserves composition for \(selection)")
+   _ = key("", code: 53)
+   _ = key("x")
+   let unmatched = key(selection)
+   check(unmatched.consumed && unmatched.commit == nil && input.composition.code == "x", "no matches preserve code for \(selection)")
+   _ = key("", code: 53)
+  }
+  check(key("'").commit == "‘" && key("'").commit == "’", "idle single quotes remain paired punctuation")
+  _ = input.controlChanged(isDown: true, otherModifiers: false)
+  _ = input.controlChanged(isDown: false, otherModifiers: false)
+  for c in "xi'an" { _ = key(String(c)) }
+  check(input.composition.code == "xi'an" && input.usingPinyin, "pinyin ASCII apostrophe remains syllable separator")
+  _ = key("", code: 53)
+  _ = input.controlChanged(isDown: true, otherModifiers: false)
+  _ = input.controlChanged(isDown: false, otherModifiers: false)
+  _ = key("a")
+  check(key("‘").commit == "或" && !input.usingPinyin, "Chinese quote selects third pinyin candidate and restores Wubi")
+  _ = input.setCapsLock(true)
+  for text in ["`", ";", "；", "'", "‘"] {
+   check(!key(text).consumed, "Caps Lock passes through \(text)")
+  }
+  _ = input.setCapsLock(false)
   _ = key("a")
   _ = key("=")
   check(shift().commit == "a", "Shift commits raw code even after paging")
   check(input.composition.code.isEmpty && input.modeTitle == "ABC", "Shift clears composition and enters English")
   check(!key(",").consumed, "English punctuation passes through")
+  for text in ["`", ";", "；", "'", "‘"] {
+   check(!key(text).consumed, "English passes through \(text)")
+  }
   check(!key("a").consumed, "English letters pass through")
   check(shift().commit == nil && input.modeTitle == "中文", "idle Shift switches back without inserting text")
   check(key(",").commit == "，", "Chinese punctuation follows mode")
