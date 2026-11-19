@@ -150,11 +150,11 @@ final class PreferencesController: NSWindowController, NSTableViewDataSource, NS
         let (view, stack) = page()
         stack.addArrangedSubview(heading("搜猫五笔", size: 28))
         stack.addArrangedSubview(note("独立开发的 macOS 原生五笔输入法"))
-        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.3.0"
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.3.3"
         stack.addArrangedSubview(note("版本 \(version) · 完全离线"))
         addSpace(16, to: stack)
         stack.addArrangedSubview(heading("你的词库，由你决定", size: 16))
-        stack.addArrangedSubview(note("内置 \(store.baseCount.formatted()) 条编码与词语配对。\n基础数据来自本机搜狗五笔词库；应用与输入引擎为独立实现。\n搜猫五笔与搜狗公司无隶属关系。"))
+        stack.addArrangedSubview(note("内置 \(store.baseCount.formatted()) 条编码与词语配对。\n基础词库随应用提供；应用与输入引擎为独立实现。\n支持自造词、删除、恢复和候选顺序调整。"))
         stack.addArrangedSubview(note("应用不提供账号、云候选、遥测或在线更新。\n联网能力由系统级进程限制禁用。"))
         addSpace(12, to: stack)
         stack.addArrangedSubview(heading("用户词库位置", size: 14))

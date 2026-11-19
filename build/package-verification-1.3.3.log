@@ -1,0 +1,10 @@
+build/package-check-1.3.3/SoumaoWubi-component.pkg/Payload/Library/Input Methods/SoumaoWubi.app: valid on disk
+build/package-check-1.3.3/SoumaoWubi-component.pkg/Payload/Library/Input Methods/SoumaoWubi.app: satisfies its Designated Requirement
+PASS: packaged version 1.3.3, build 6, macOS 14 minimum
+PASS: all 9 packaged app files match build output
+PASS: fixed installation path and replacement upgrade metadata
+PASS: distribution metadata, architectures and postinstall script
+PASS: packaged dictionary resources and entry counts
+PASS: packaged app and installer resources contain no removed brand names
+PASS: strict code signature and arm64/x86_64 executable
+SHA-256: 200251717aac817488302a0e43832fa82ab74b463da264101de2f94b6b37e082

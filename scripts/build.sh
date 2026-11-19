@@ -7,7 +7,7 @@ SDK="$(/usr/bin/xcrun --sdk macosx --show-sdk-path)"
 BUILD="$ROOT/build"
 APP="$BUILD/SoumaoWubi.app"
 STAGE="$BUILD/package-root"
-PACKAGE="$ROOT/搜猫五笔-1.3.1.pkg"
+PACKAGE="$ROOT/搜猫五笔-1.3.3.pkg"
 COMPONENT="$BUILD/SoumaoWubi-component.pkg"
 mkdir -p "$BUILD" "$BUILD/module-cache" "$APP/Contents/MacOS" "$APP/Contents/Resources"
 export CLANG_MODULE_CACHE_PATH="$BUILD/module-cache"
@@ -46,7 +46,7 @@ mkdir -p "$STAGE/Library/Input Methods"
 /usr/libexec/PlistBuddy -c 'Add :0:BundleIsRelocatable bool false' "$BUILD/components.plist"
 /usr/libexec/PlistBuddy -c 'Set :0:BundleOverwriteAction upgrade' "$BUILD/components.plist"
 /usr/bin/pkgbuild --root "$STAGE" --component-plist "$BUILD/components.plist" \
-    --identifier com.soumao.inputmethod.Wubi.pkg --version 1.3.1 --install-location / \
+    --identifier com.soumao.inputmethod.Wubi.pkg --version 1.3.3 --install-location / \
     --ownership recommended --scripts "$ROOT/scripts/package-scripts" "$COMPONENT"
 /usr/bin/productbuild --distribution "$ROOT/Resources/Distribution.xml" \
     --resources "$ROOT/Resources/Installer" --package-path "$BUILD" "$PACKAGE"

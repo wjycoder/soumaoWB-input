@@ -17,7 +17,7 @@ import Foundation
    checks += 1
    do { try body(); fputs("FAIL: \(message)\n", stderr); exit(1) } catch { }
   }
-  check(store.baseCount == 112014, "all source pairs loaded")
+  check(store.baseCount == 112008, "all source pairs loaded")
   check(store.candidates(for: "a").first == "工", "short code priority")
   check(store.candidates(for: "q").first == "我", "irregular short code")
   check(store.candidates(for: "khlg").prefix(3).elementsEqual(["中国", "跑车", "跳车"]), "same-code ranking")

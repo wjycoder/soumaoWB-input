@@ -164,6 +164,29 @@ import AppKit
         check(candidates.orientation == .horizontal, "candidates arranged horizontally")
         check(candidates.arrangedSubviews.count == 5 && candidates.arrangedSubviews.allSatisfy { $0 is NSButton }, "only five candidate buttons, no title/code/paging labels")
         check(!candidateWindow.canBecomeKey, "candidate window does not steal input focus")
+        let keyWindow = app.keyWindow
+        let overlay = NSPanel(contentRect: candidateWindow.frame.insetBy(dx: -8, dy: -8),
+                              styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
+        overlay.level = NSWindow.Level(rawValue: NSWindow.Level.screenSaver.rawValue - 1)
+        overlay.backgroundColor = .systemRed
+        overlay.isReleasedWhenClosed = false
+        defer { overlay.orderOut(nil) }
+        overlay.orderFrontRegardless()
+        settle()
+        func candidateIsAboveOverlay() -> Bool {
+            guard let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]],
+                  let candidateIndex = windows.firstIndex(where: { ($0[kCGWindowNumber as String] as? Int) == candidateWindow.windowNumber }),
+                  let overlayIndex = windows.firstIndex(where: { ($0[kCGWindowNumber as String] as? Int) == overlay.windowNumber }) else { return false }
+            if candidateIndex >= overlayIndex {
+                fputs("Window ordering: candidate level=\(candidateWindow.level.rawValue), overlay level=\(overlay.level.rawValue), candidate index=\(candidateIndex), overlay index=\(overlayIndex)\n", stderr)
+            }
+            return candidateIndex < overlayIndex
+        }
+        check(candidateIsAboveOverlay(), "candidate stays above an overlapping high-level panel opened later")
+        check(app.keyWindow === keyWindow && !candidateWindow.isKeyWindow && !candidateWindow.canBecomeMain,
+              "topmost candidate preserves the current input focus")
+        check(candidateWindow.collectionBehavior.contains([.canJoinAllSpaces, .fullScreenAuxiliary]),
+              "candidate supports all Spaces and fullscreen clients")
         let buttons = candidates.arrangedSubviews as! [NSButton]
         check(zip(buttons, buttons.dropFirst()).allSatisfy { $0.frame.maxX <= $1.frame.minX && abs($0.frame.midY - $1.frame.midY) < 1 }, "candidate buttons fit one row without overlap")
         check(buttons[0].title == "1 工", "exact candidate has no code suffix")
@@ -184,11 +207,18 @@ import AppKit
             try output.representation(using: .png, properties: [:])?.write(to: build.appendingPathComponent("candidates-horizontal.png"))
         }
         let screen = NSScreen.main!.visibleFrame
+        candidate.hide()
+        check(!candidateWindow.isVisible, "topmost candidate hides when composition ends")
         candidate.show(candidates: Array(repeating: InputCandidate(word: String(repeating: "长词", count: 32), code: "aaaa", completion: true), count: 5), anchor: NSRect(x: screen.maxX - 1, y: screen.minY, width: 1, height: 20)) { _ in }
         settle()
+        overlay.setFrame(candidateWindow.frame.insetBy(dx: -8, dy: -8), display: true)
+        overlay.orderFrontRegardless()
+        settle()
+        check(candidateIsAboveOverlay(), "candidate remains topmost after hiding and showing again")
         check(screen.contains(candidateWindow.frame), "long candidates stay inside screen edges")
         candidate.show(candidates: [], anchor: .zero) { _ in }
         check(!candidateWindow.isVisible, "no-match candidate window hidden")
+        overlay.orderOut(nil)
         let toast = ModeIndicator.shared
         let owner = NSObject()
         let otherOwner = NSObject()

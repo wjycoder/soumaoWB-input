@@ -195,7 +195,7 @@ final class DictionaryStore {
   let normalized = code.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
   let custom = Set(addedByCode[normalized] ?? [])
   return orderedWords(for: normalized, in: changes, added: addedByCode[normalized] ?? []).map {
-   DictionaryRow(code: normalized, word: $0, source: custom.contains($0) ? "自造词" : "搜狗基础词库",
+   DictionaryRow(code: normalized, word: $0, source: custom.contains($0) ? "自造词" : "基础词库",
                  deleted: removedSet.contains(WordPair(code: normalized, word: $0)))
   }
  }

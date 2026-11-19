@@ -11,8 +11,10 @@ final class CandidatePanel {
  init() {
   panel = NonactivatingPanel(contentRect: NSRect(x: 0, y: 0, width: 300, height: 44), styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
   panel.setAccessibilityIdentifier("soumao.candidates")
-  panel.level = .popUpMenu
   panel.isFloatingPanel = true
+  // Setting isFloatingPanel resets the level to .floating. Assign our level
+  // afterwards so client overlays cannot cover candidates or take typing focus.
+  panel.level = .screenSaver
   panel.hidesOnDeactivate = false
   panel.isReleasedWhenClosed = false
   panel.hasShadow = true
